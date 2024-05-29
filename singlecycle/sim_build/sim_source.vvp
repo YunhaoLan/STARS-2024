@@ -1,0 +1,98 @@
+#! /home/shay/a/ece270/bin/vvp -v
+:ivl_version "12.0 (devel)" "(s20150603-1556-g542da1166)";
+:ivl_delay_selection "TYPICAL";
+:vpi_time_precision + 0;
+:vpi_module "/home/shay/a/ece270/lib/ivl/system.vpi";
+:vpi_module "/home/shay/a/ece270/lib/ivl/vhdl_sys.vpi";
+:vpi_module "/home/shay/a/ece270/lib/ivl/vhdl_textio.vpi";
+:vpi_module "/home/shay/a/ece270/lib/ivl/v2005_math.vpi";
+:vpi_module "/home/shay/a/ece270/lib/ivl/va_math.vpi";
+:vpi_module "/home/shay/a/ece270/lib/ivl/v2009.vpi";
+S_0x559efb604030 .scope package, "$unit" "$unit" 2 1;
+ .timescale 0 0;
+S_0x559efb6041c0 .scope package, "cpu_types_pkg" "cpu_types_pkg" 3 15;
+ .timescale 0 0;
+P_0x559efb60a4b0 .param/l "ADDR_W" 0 3 27, +C4<00000000000000000000000000011010>;
+P_0x559efb60a4f0 .param/l "AOP_W" 0 3 30, +C4<00000000000000000000000000000100>;
+P_0x559efb60a530 .param/l "DBLK_W" 0 3 41, +C4<00000000000000000000000000000001>;
+P_0x559efb60a570 .param/l "DBYT_W" 0 3 42, +C4<00000000000000000000000000000010>;
+P_0x559efb60a5b0 .param/l "DIDX_W" 0 3 40, +C4<00000000000000000000000000000011>;
+P_0x559efb60a5f0 .param/l "DTAG_W" 0 3 39, +C4<00000000000000000000000000011010>;
+P_0x559efb60a630 .param/l "DWAY_ASS" 0 3 43, +C4<00000000000000000000000000000010>;
+P_0x559efb60a670 .param/l "FUNC_W" 0 3 25, +C4<00000000000000000000000000000110>;
+P_0x559efb60a6b0 .param/l "IBLK_W" 0 3 35, +C4<00000000000000000000000000000000>;
+P_0x559efb60a6f0 .param/l "IBYT_W" 0 3 36, +C4<00000000000000000000000000000010>;
+P_0x559efb60a730 .param/l "IIDX_W" 0 3 34, +C4<00000000000000000000000000000100>;
+P_0x559efb60a770 .param/l "IMM_W" 0 3 26, +C4<00000000000000000000000000010000>;
+P_0x559efb60a7b0 .param/l "ITAG_W" 0 3 33, +C4<00000000000000000000000000011010>;
+P_0x559efb60a7f0 .param/l "OP_W" 0 3 22, +C4<00000000000000000000000000000110>;
+P_0x559efb60a830 .param/l "REG_W" 0 3 23, +C4<00000000000000000000000000000101>;
+P_0x559efb60a870 .param/l "SHAM_W" 0 3 24, +C4<00000000000000000000000000000101>;
+P_0x559efb60a8b0 .param/l "WBYTES" 0 3 19, +C4<00000000000000000000000000000100>;
+P_0x559efb60a8f0 .param/l "WORD_W" 0 3 18, +C4<00000000000000000000000000100000>;
+enum0x559efb5d59c0 .enum4 (6)
+   "RTYPE" 6'b000000,
+   "J" 6'b000010,
+   "JAL" 6'b000011,
+   "BEQ" 6'b000100,
+   "BNE" 6'b000101,
+   "ADDI" 6'b001000,
+   "ADDIU" 6'b001001,
+   "SLTI" 6'b001010,
+   "SLTIU" 6'b001011,
+   "ANDI" 6'b001100,
+   "ORI" 6'b001101,
+   "XORI" 6'b001110,
+   "LUI" 6'b001111,
+   "LW" 6'b100011,
+   "LBU" 6'b100100,
+   "LHU" 6'b100101,
+   "SB" 6'b101000,
+   "SH" 6'b101001,
+   "SW" 6'b101011,
+   "LL" 6'b110000,
+   "SC" 6'b111000,
+   "HALT" 6'b111111
+ ;
+enum0x559efb5c38e0 .enum4 (6)
+   "SLLV" 6'b000100,
+   "SRLV" 6'b000110,
+   "JR" 6'b001000,
+   "ADD" 6'b100000,
+   "ADDU" 6'b100001,
+   "SUB" 6'b100010,
+   "SUBU" 6'b100011,
+   "AND" 6'b100100,
+   "OR" 6'b100101,
+   "XOR" 6'b100110,
+   "NOR" 6'b100111,
+   "SLT" 6'b101010,
+   "SLTU" 6'b101011
+ ;
+enum0x559efb5c3c20 .enum4 (4)
+   "ALU_SLL" 4'b0000,
+   "ALU_SRL" 4'b0001,
+   "ALU_ADD" 4'b0010,
+   "ALU_SUB" 4'b0011,
+   "ALU_AND" 4'b0100,
+   "ALU_OR" 4'b0101,
+   "ALU_XOR" 4'b0110,
+   "ALU_NOR" 4'b0111,
+   "ALU_SLT" 4'b1010,
+   "ALU_SLTU" 4'b1011
+ ;
+enum0x559efb607ae0 .enum4 (2)
+   "FREE" 2'b00,
+   "BUSY" 2'b01,
+   "ACCESS" 2'b10,
+   "ERROR" 2'b11
+ ;
+S_0x559efb60ad10 .scope module, "system_if" "system_if" 4 13;
+ .timescale 0 0;
+# The file index is used to find the file name in the following table.
+:file_names 5;
+    "N/A";
+    "<interactive>";
+    "-";
+    "./source/cpu_types_pkg.vh";
+    "./source/system_if.vh";

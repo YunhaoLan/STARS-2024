@@ -1,0 +1,13 @@
+work
+mapped
+fpga
+transcript
+modelsim.ini
+*.wlf
+README
+*.swp
+._*
+*.log
+.deps
+*.hex
+*.ver

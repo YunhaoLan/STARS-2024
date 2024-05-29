@@ -1,0 +1,37 @@
+Frequency Sweep Report File 2023_10_15_06_53_PM
+Frequency table for LAT = 0 85C Model
++-----------+-----------------+---------------------+------+
+; Fmax      ; Restricted Fmax ; Clock Name          ; Note ;
++-----------+-----------------+---------------------+------+
+; 35.36 MHz ; 35.36 MHz       ; CPUCLK              ;      ;
+; 61.45 MHz ; 61.45 MHz       ; CLK                 ;      ;
+; 74.04 MHz ; 74.04 MHz       ; altera_reserved_tck ;      ;
++-----------+-----------------+---------------------+------+
+# Halted at 276040 time and ran for      13801 cycles.
+Frequency table for LAT = 2 85C Model
++-----------+-----------------+---------------------+------+
+; Fmax      ; Restricted Fmax ; Clock Name          ; Note ;
++-----------+-----------------+---------------------+------+
+; 33.28 MHz ; 33.28 MHz       ; CPUCLK              ;      ;
+; 64.28 MHz ; 64.28 MHz       ; CLK                 ;      ;
+; 76.56 MHz ; 76.56 MHz       ; altera_reserved_tck ;      ;
++-----------+-----------------+---------------------+------+
+# Halted at 552120 time and ran for      27605 cycles.
+Frequency table for LAT = 6 85C Model
++-----------+-----------------+---------------------+------+
+; Fmax      ; Restricted Fmax ; Clock Name          ; Note ;
++-----------+-----------------+---------------------+------+
+; 34.79 MHz ; 34.79 MHz       ; CPUCLK              ;      ;
+; 60.91 MHz ; 60.91 MHz       ; CLK                 ;      ;
+; 81.49 MHz ; 81.49 MHz       ; altera_reserved_tck ;      ;
++-----------+-----------------+---------------------+------+
+# Halted at 1.1042e+06 time and ran for      55209 cycles.
+Frequency table for LAT = 10 85C Model
++-----------+-----------------+---------------------+------+
+; Fmax      ; Restricted Fmax ; Clock Name          ; Note ;
++-----------+-----------------+---------------------+------+
+; 34.15 MHz ; 34.15 MHz       ; CPUCLK              ;      ;
+; 62.13 MHz ; 62.13 MHz       ; CLK                 ;      ;
+; 69.35 MHz ; 69.35 MHz       ; altera_reserved_tck ;      ;
++-----------+-----------------+---------------------+------+
+# Halted at 1.65628e+06 time and ran for      82813 cycles.
