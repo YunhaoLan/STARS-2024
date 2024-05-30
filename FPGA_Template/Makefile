@@ -8,8 +8,9 @@ SHELL=bash
 PROJ    = template
 PINMAP  = pinmap.pcf
 CELLS	= support/cells_map_timing.v support/cells_sim_timing.v
-SRC     = top.sv
-TB	    = tb.sv
+TOP 	?= top.sv
+SRC 	= ./src/$(TOP)
+TB	    = ./tb/tb_$(basename $(TOP)).sv
 ICE     = ice40hx8k.sv
 UART    = support/uart.v support/uart_tx.v support/uart_rx.v
 FILES   = $(ICE) $(SRC) $(UART)
@@ -19,6 +20,8 @@ TRACE   = sim.vcd
 DEVICE  = 8k
 TIMEDEV = hx8k
 FOOTPRINT = ct256
+
+
 
 all: cram
 
@@ -42,6 +45,7 @@ $(BUILD)/$(PROJ).bin : $(BUILD)/$(PROJ).asc
 
 #########################
 # Run a testbench
+
 sim: $(SRC)
 	# if build folder doesn't exist, create it
 	mkdir -p $(BUILD)

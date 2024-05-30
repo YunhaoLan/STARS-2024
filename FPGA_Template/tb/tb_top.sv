@@ -1,5 +1,5 @@
 `timescale 1ms/10ps
-module tb;
+module tb_top;
 
     logic [20:0] pb; 
     logic [7:0]ss0;
@@ -47,7 +47,7 @@ parameter PERIOD = 10;
 
 initial begin
     $dumpfile("sim.vcd");
-    $dumpvars(0, tb);
+    $dumpvars(0, tb_top);
 
     test_num = 0;
     pb='0;

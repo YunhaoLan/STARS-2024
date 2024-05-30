@@ -1,7 +1,7 @@
 `default_nettype none
 // Empty top module
-`include "seven_seg.sv"
-`include "type_key.sv"
+`include "src/seven_seg.sv"
+`include "src/type_key.sv"
 
 module top (
   // I/O ports
