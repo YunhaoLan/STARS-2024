@@ -8,7 +8,9 @@ module seven_seg (
     output logic [7:0]ss4,
     output logic [7:0]ss5,
     output logic [7:0]ss6,
-    output logic [7:0]ss7
+    output logic [7:0]ss7,
+    output logic [15:0]left_right,
+    output logic [2:0]rgb
 );
 logic [7:0][6:0] seg;
 always_comb begin
@@ -33,6 +35,43 @@ always_comb begin
         4'hf: seg[i] = 7'b1110001;
         default: seg[i] = '0;
         endcase 
+    end
+//easter eggs
+    left_right = '0;
+    rgb = '0;
+    if (seg[7] == 7'b1111100&&
+        seg[6] == 7'b1110111&&
+        seg[5] == 7'b1011110&&
+        seg[4] == 7'b1111100&&
+        seg[3] == 7'b1110111&&
+        seg[2] == 7'b1011110&&
+        seg[1] == 7'b0111111&&
+        seg[0] == 7'b0111111
+    ) begin
+        rgb = 3'b100;
+        left_right = '1;
+    end
+
+    if (seg[7] == 7'b1011110&&
+        seg[6] == 7'b1111001&&
+        seg[5] == 7'b1110111&&
+        seg[4] == 7'b1011110&&
+        seg[3] == 7'b1111100&&
+        seg[2] == 7'b1111001&&
+        seg[1] == 7'b1111001&&
+        seg[0] == 7'b1110001
+    ) begin
+        rgb = 3'b010;
+        left_right = '1;
+    end
+
+    if (seg[7] == 7'b1110001&&
+        seg[6] == 7'b1111001&&
+        seg[5] == 7'b1111001&&
+        seg[4] == 7'b1011110
+    ) begin
+        rgb = 3'b001;
+        left_right = '1;
     end
 end
 

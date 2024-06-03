@@ -26,6 +26,6 @@ module top (
   logic [7:0][3:0] digits;
   logic [7:0] flt_pt;
   type_key TEST (.CLK(hz100), .NRST(~pb[19]), .left_shift(pb[18]), .right_shift(pb[17]), .pb(pb[15:0]), .digits(digits), .flt_pt(flt_pt));
-  seven_seg DECODER (.digits(digits), .flt_pt(flt_pt),.ss0(ss0), .ss1(ss1), .ss2(ss2), .ss3(ss3), .ss4(ss4), .ss5(ss5), .ss6(ss6), .ss7(ss7));
+  seven_seg DECODER (.digits(digits), .flt_pt(flt_pt),.ss0(ss0), .ss1(ss1), .ss2(ss2), .ss3(ss3), .ss4(ss4), .ss5(ss5), .ss6(ss6), .ss7(ss7), .left_right({left, right}), .rgb({red, green, blue}));
   // Add more modules down here...
 endmodule
