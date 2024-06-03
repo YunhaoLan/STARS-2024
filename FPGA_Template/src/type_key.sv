@@ -2,6 +2,7 @@ module type_key (
   input logic CLK,
   input logic NRST,
   input logic left_shift,
+  input logic right_shift,
   input logic [15:0] pb,
   output logic [7:0][3:0] digits,
   output logic [7:0] flt_pt
@@ -9,22 +10,30 @@ module type_key (
   logic[7:0][3:0] nxt_d;
   logic [2:0] cnt;
   logic [2:0] nxt_cnt;
+  logic prev_left_shift;
+  logic prev_right_shift;
 
   always_ff @(posedge CLK, negedge NRST) begin
     if (!NRST) begin
       digits <= '0;
       cnt <= '0;
+      prev_left_shift <= '0;
+      prev_right_shift <='0;
     end else begin
       digits <= nxt_d;
       cnt <= nxt_cnt;
+      prev_left_shift <= left_shift;
+      prev_right_shift <= right_shift;
     end
   end
 
-  always_ff@(posedge left_shift) begin
-    if(!NRST) begin
-      nxt_cnt<='0;
-    end else begin
-      nxt_cnt<=nxt_cnt+1;
+  always_ff @(posedge CLK) begin
+    if (!NRST) begin
+      nxt_cnt <= '0;
+    end else if (left_shift && !prev_left_shift) begin
+      nxt_cnt <= cnt + 1;
+    end else if (right_shift && !prev_right_shift) begin
+      nxt_cnt <= cnt - 1;
     end
   end
 
